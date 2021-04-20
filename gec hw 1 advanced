@@ -1,0 +1,5 @@
+def reverse(x):
+    return x[::-1]
+
+string = reverse(input())
+print(string)
