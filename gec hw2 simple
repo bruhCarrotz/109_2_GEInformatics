@@ -1,0 +1,12 @@
+import sys
+words = []
+for line in sys.stdin.readlines():
+    words.append(line.strip())
+
+e1 = float(words[0])
+e2 = float(words[1])
+e3 = int(words[2])
+e4 = words[3]
+res1 = e1 * e2
+res2 = e3 * e4
+print('%.1f%s' %(res1, res2))
