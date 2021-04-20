@@ -1,0 +1,9 @@
+x = input().split(',')
+if 'i1' in x:
+    poplist = [x for x in x if 'i1' not in x]
+    result = max(map(int,poplist))
+    print(result)
+if 'i2' in x:
+    poplist = [x for x in x if 'i2' not in x]
+    result = min(map(int,poplist))
+    print(result)
