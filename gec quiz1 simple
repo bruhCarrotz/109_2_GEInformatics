@@ -1,0 +1,6 @@
+list1 = input().split(' ')
+list2 = input().split(' ')
+
+list1 = [i for i in list1 if i not in list2]
+  
+print(*list1)
