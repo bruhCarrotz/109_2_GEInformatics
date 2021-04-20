@@ -1,0 +1,23 @@
+import sys
+score=[]
+result=[]
+for line in sys.stdin.readlines():
+    if '\\' not in line:
+        scoreWeight = line.strip().split(' ')
+        for i in range(len(scoreWeight)):
+            scoreWeight[i] = float(scoreWeight[i])
+    else:
+        word = line.strip()
+        elements = word.split(',')
+        testedCase = [i for i,x in enumerate(elements) if '\\' in x]
+        for i in range(len(testedCase)):
+            score.append(elements[testedCase[i]].split('\\'))
+        for i in range(len(score)):
+            result.append(int(score[i][0])/int(score[i][1])*float(scoreWeight[i]))
+        
+        x = sum(result)/sum(scoreWeight)*100
+        print(elements[1]+','+'%.2f' %x)
+        result=[]
+        score=[]
+
+
