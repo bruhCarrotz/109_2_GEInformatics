@@ -1,0 +1,4 @@
+x,y,z = input().split(',')
+for i in range(1,int(x)+1):
+    print(z+str(y), end='')
+print(z)
