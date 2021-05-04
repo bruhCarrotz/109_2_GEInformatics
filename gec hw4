@@ -1,0 +1,28 @@
+import sys
+templist =[]
+for line in sys.stdin.readlines():
+    a, b = line.strip().split(',')
+    templist.append((a,b))
+
+finalDict = dict()
+for i in templist:
+    if i[0] not in finalDict:
+        finalDict[i[0]] = float(i[1])
+    else:
+        finalDict[i[0]] = finalDict[i[0]]+float(i[1])
+        
+key = list(finalDict.keys())
+val = list(finalDict.values())
+minimum = min(val)
+
+for keys, num in finalDict.items():
+    if num == minimum:
+        key.remove(keys)
+        val.remove(num)
+
+ziping = zip(key,val)
+newdict = dict(ziping)
+result = dict(sorted(newdict.items(), key = lambda item: item[1], reverse = True))
+final = {A:N for (A,N) in [x for x in result.items()][:3]}
+for i in final:
+    print(i+','+str(final[i]))
