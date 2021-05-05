@@ -1,0 +1,8 @@
+#the concept and flow is already correct
+
+n = input()
+inputline = input()
+wordList = inputline.split()
+test = sorted(wordList, key=len, reverse=True)
+test1 = test[:int(n)]
+print('\n'.join(test1))
