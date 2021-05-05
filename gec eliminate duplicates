@@ -1,0 +1,19 @@
+#Ericc,eriic,rRita,Joanna,Robin,Reno
+#,
+#Eri,erc,ita,Jo,Robin,Reno
+
+names = input()
+sep = input()
+oldlist = names.split(sep)
+final = []
+for i in oldlist:
+    cap_single = list(i)
+    low_single = list(i.lower())
+    newlist = []
+    for j in cap_single:
+        check = j.lower()
+        if low_single.count(check)==1:
+            newlist.append(j)
+    joinlist = ''.join(newlist)
+    final.append(joinlist)
+print(sep.join(final))
