@@ -1,0 +1,17 @@
+x = input()
+ori = x[::-1]
+
+if len(ori)==16 and ori[0]=='4':
+    print('Visa Card')
+elif len(ori)==16 and ori[:2]=='62':
+    print('Unionpay Card')
+elif len(ori)==16 and int(ori[:2]) in range(51,56):
+    print('Master Card')
+elif len(ori)==16 and int(ori[:3]) in range(300,400):
+    print('JCB Card')
+elif ori[:4] == '1800' or ori[:4] == '2131':
+    print('JCB Card')
+elif len(ori)==15 and int(ori[:3]) in range(340,380):
+    print('American Express')
+else:
+    print('Unknown')
