@@ -1,0 +1,31 @@
+check = []
+final = []
+
+import sys
+words = []
+for line in sys.stdin.readlines():
+    y = line.strip()
+    x = y[::-1]
+    check = []
+    final = []
+    if len(x) == '15' or '16':
+        for i in range(len(x)):
+            if (i+1)%2 == 0:
+                res = int(x[i])*2
+                check.append(res)
+            else: 
+                res = int(x[i])*1
+                check.append(res)
+        new = [str(int) for int in check]
+        for j in new:
+            if len(j) == 2:
+                a = list(map(int, str(j)))
+                j = str(int(a[0]+a[1]))
+                final.append(j)
+            else:
+                final.append(j)
+        temp = [int(i) for i in final]
+        if sum(temp)%10 == 0:
+            print(y)
+        else:
+            pass
